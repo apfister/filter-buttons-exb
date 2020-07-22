@@ -109,17 +109,15 @@ export default class Setting extends React.PureComponent<
 
   onAddButtonClick = () => {
     const layerId = `${this.state.selectedLayerInfo.jimuMapViewId}-${this.state.selectedLayerInfo.jimuLayerId}`
-    const newButtons = [
-      {
-        id: Math.random(),
-        label: 'My Layer Filter Name',
-        layer: layerId,
-        expression: "1=1"
-      }
-    ]
+    const newButton = {
+      id: Math.random(),
+      label: 'My Layer Filter Name',
+      layer: layerId,
+      expression: "1=1"
+    };
 
     let btns = [...this.props.config.configuredButtons];
-    btns.push(newButtons);
+    btns.push(newButton);
 
     this.props.onSettingChange({
       id: this.props.id,
